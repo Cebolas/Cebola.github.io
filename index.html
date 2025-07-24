@@ -257,7 +257,7 @@
   
   @keyframes pulseTimer {
     0% { transform: scale(1); }
-    100% { transform: scale(1.1); }
+    100% { transform: scale(1.05); }
   }
   
   #timer-container.warning {
@@ -884,7 +884,7 @@
   const somErro = new Audio('https://actions.google.com/sounds/v1/cartoon/boing.ogg');
   const somTempo = new Audio('https://actions.google.com/sounds/v1/alarms/beep_short.ogg');
 
-  // Função para embaralhar array (Fisher-Yates)
+  // Função para embaralhar array (Fisher-Yates) - usado apenas para perguntas
   function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -973,7 +973,7 @@
   function mostrarNivel(nivel) {
     nivelAtual = nivel;
     
-    // Embaralhar as perguntas e fazer uma cópia para não modificar o original
+    // Embaralhar apenas a ordem das perguntas (mantendo respostas na ordem original)
     perguntasNivelAtual = shuffleArray([...niveis[nivelAtual]]);
     
     indicePergunta = 0;
@@ -995,30 +995,18 @@
     questionText.textContent = p.pergunta;
     answersContainer.innerHTML = '';
 
-    // Embaralhar as opções de resposta
-    const opcoesEmbaralhadas = [...p.opcoes];
-    const respostaCorreta = p.opcoes[p.resposta];
-    
-    // Embaralhar mantendo controle da resposta correta
-    shuffleArray(opcoesEmbaralhadas);
-    
-    // Atualizar o índice da resposta correta
-    const novaResposta = opcoesEmbaralhadas.indexOf(respostaCorreta);
-
-    opcoesEmbaralhadas.forEach((opcao, i) => {
+    // Mostrar as opções na ORDEM ORIGINAL (não embaralhar)
+    p.opcoes.forEach((opcao, i) => {
       const btn = document.createElement('button');
       btn.classList.add('answer-btn');
       btn.textContent = opcao;
       btn.setAttribute('role', 'listitem');
       btn.dataset.index = i;
-      btn.dataset.correct = (i === novaResposta);
+      btn.dataset.correct = (i === p.resposta);
       btn.style.animationDelay = `${i * 0.1}s`;
       btn.addEventListener('click', responderPergunta);
       answersContainer.appendChild(btn);
     });
-    
-    // Atualizar a resposta correta no objeto da pergunta
-    p.resposta = novaResposta;
     
     // Iniciar o timer para esta pergunta (10 segundos)
     startTimer();
