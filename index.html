@@ -368,8 +368,8 @@
     <!-- Tela Inicial -->
     <section id="start-screen" class="active" aria-live="polite">
       <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 20px;">
-        <img src="justino.png" alt="Justino" class="character">
-        <img src="lia.png" alt="Lia" class="character">
+        <div class="character"></div>
+        <div class="character"></div>
       </div>
       <h1>Quiz Divertido<br>de Direitos Humanos</h1>
       <p class="description">
@@ -395,7 +395,7 @@
       </div>
       
       <div id="question-container">
-        <img id="current-character" src="" alt="Personagem" class="character">
+        <div id="current-character" class="character"></div>
         <div id="question-text" tabindex="0"></div>
       </div>
       
@@ -410,8 +410,8 @@
     <!-- Tela Resultado Final -->
     <section id="result-screen" aria-live="polite" style="display:none;">
       <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 20px;">
-        <img src="justino.png" alt="Justino" class="character">
-        <img src="lia.png" alt="Lia" class="character">
+        <div class="character"></div>
+        <div class="character"></div>
       </div>
       <h1>Parabéns! 🎉</h1>
       <div id="final-score"></div>
@@ -432,11 +432,11 @@
         pergunta: "O que são os direitos humanos?",
         opcoes: [
           "Regras para brincar",
-          "Apenas para adultos",
           "Direitos básicos de todas as pessoas",
+          "Apenas para adultos",
           "Um jogo"
         ],
-        resposta: 2 // Índice corrigido (agora começa em 0)
+        resposta: 1 // Índice corrigido (agora começa em 0)
       },
       {
         pergunta: "Qual destes é um direito humano?",
@@ -452,11 +452,11 @@
         pergunta: "Quem deve respeitar os direitos humanos?",
         opcoes: [
           "Só os professores",
-          "Só os adultos",
+          "Todas as pessoas",
           "Só os pais",
-          "Todas as pessoas"
+          "Só os adultos"
         ],
-        resposta: 3
+        resposta: 1
       },
       {
         pergunta: "Por que respeitar as diferenças é importante?",
@@ -481,22 +481,22 @@
       {
         pergunta: "Todas as crianças têm direito a:",
         opcoes: [
-          "Ficar sem brincar",
-          "Ganhar presentes sempre",
           "Educação gratuita",
+          "Ganhar presentes sempre",
+          "Ficar sem brincar",
           "Decidir tudo sozinhas"
         ],
-        resposta: 2
+        resposta: 0
       },
       {
         pergunta: "O que é bullying?",
         opcoes: [
           "Brincar junto",
-          "Fazer brincadeiras sem maldade",
+          "Agredir física ou verbalmente alguém",
           "Ajudar um amigo",
-          "Agredir física ou verbalmente alguém"
+          "Fazer brincadeiras sem maldade"
         ],
-        resposta: 3
+        resposta: 1
       },
       {
         pergunta: "Se alguém está triste, o que devemos fazer?",
@@ -512,11 +512,11 @@
         pergunta: "Onde podemos aprender sobre direitos humanos?",
         opcoes: [
           "Só na internet",
-          "Só com os amigos",
           "Na escola e em casa",
+          "Só com os amigos",
           "Não precisamos aprender"
         ],
-        resposta: 2
+        resposta: 1
       },
       {
         pergunta: "O que devemos fazer quando alguém precisa de ajuda?",
@@ -552,21 +552,21 @@
         pergunta: "O que é preconceito?",
         opcoes: [
           "Uma opinião diferente",
-          "Um tipo de brincadeira",
           "Julgar alguém antes de conhecer",
+          "Um tipo de brincadeira",
           "Algo que não existe mais"
         ],
-        resposta: 2
+        resposta: 1
       },
       {
         pergunta: "Por que é importante ir à escola?",
         opcoes: [
-          "Só porque é obrigatório",
+          "É um direito e nos ajuda a crescer",
           "Porque os pais mandam",
           "Para ficar longe de casa",
-          "É um direito e nos ajuda a crescer"
+          "Só porque é obrigatório"
         ],
-        resposta: 3
+        resposta: 0
       },
       {
         pergunta: "O que fazer se vir alguém sendo discriminado?",
@@ -593,22 +593,22 @@
       {
         pergunta: "Qual destes NÃO é um direito humano?",
         opcoes: [
-          "Ter acesso à saúde",
+          "Humilhar os outros",
           "Ser tratado com dignidade",
           "Ter opinião própria",
-          "Humilhar os outros"
+          "Ter acesso à saúde"
         ],
-        resposta: 3
+        resposta: 0
       },
       {
         pergunta: "O que significa igualdade?",
         opcoes: [
           "Todos serem iguais em tudo",
-          "Só algumas pessoas terem direitos",
           "Todos terem os mesmos direitos e oportunidades",
+          "Só algumas pessoas terem direitos",
           "Cada um cuidar só de si"
         ],
-        resposta: 2
+        resposta: 1
       },
       {
         pergunta: "Como resolver conflitos pacificamente?",
@@ -633,12 +633,12 @@
       {
         pergunta: "Direito à educação inclui:",
         opcoes: [
-          "Só quem tem boas notas",
-          "Só quem pode pagar",
           "Todas as crianças, sem discriminação",
+          "Só quem pode pagar",
+          "Só quem tem boas notas",
           "Só nas cidades grandes"
         ],
-        resposta: 2
+        resposta: 0
       },
       {
         pergunta: "Quando os direitos humanos começam?",
@@ -653,7 +653,7 @@
       {
         pergunta: "O que é discriminação?",
         opcoes: [
-          "Tratar alguém mal por sua cor, gênero ou religião",
+          "Tratar alguém pior por sua cor, gênero ou religião",
           "Escolher seu time favorito",
           "Não gostar de um alimento",
           "Ter um amigo preferido"
@@ -664,21 +664,21 @@
         pergunta: "Por que existem direitos especiais para crianças?",
         opcoes: [
           "Porque são mais importantes",
-          "Porque os adultos decidiram",
           "Porque o desenvolvimento é diferente",
+          "Porque os adultos decidiram",
           "Porque não sabem de nada"
         ],
-        resposta: 2
+        resposta: 1
       },
       {
         pergunta: "Como promover direitos humanos na escola?",
         opcoes: [
-          "Impondo minhas ideias",
+          "Respeitando todos e denunciando injustiças",
           "Brigando com quem discorda",
           "Falando só com quem pensa igual",
-          "Respeitando todos e denunciando injustiças"
+          "Impondo minhas ideias"
         ],
-        resposta: 3
+        resposta: 0
       },
       {
         pergunta: "O que é liberdade de expressão?",
@@ -713,22 +713,22 @@
       {
         pergunta: "Por que é errado discriminar por cor da pele?",
         opcoes: [
-          "Porque é moda dizer isso",
-          "Porque pode dar multa",
           "Porque todos têm o mesmo valor humano",
+          "Porque pode dar multa",
+          "Porque é moda dizer isso",
           "Porque os professores mandam"
         ],
-        resposta: 2
+        resposta: 0
       },
       {
         pergunta: "O que é cidadania?",
         opcoes: [
           "Ter carteira de identidade",
-          "Ser maior de idade",
+          "Exercer direitos e cumprir deveres",
           "Morar em cidade grande",
-          "Exercer direitos e cumprir deveres"
+          "Ser maior de idade"
         ],
-        resposta: 3
+        resposta: 1
       }
     ],
     dificil: [
@@ -745,12 +745,12 @@
       {
         pergunta: "Qual órgão protege direitos humanos no Brasil?",
         opcoes: [
-          "O Ministério Público",
           "O Exército",
+          "O Ministério Público",
           "As escolas",
           "Os hospitais"
         ],
-        resposta: 0
+        resposta: 1
       },
       {
         pergunta: "Quando foi criada a Declaração dos Direitos Humanos?",
@@ -766,31 +766,31 @@
         pergunta: "O que é racismo estrutural?",
         opcoes: [
           "Um tipo de doença",
-          "Algo que não existe mais",
+          "Discriminação enraizada na sociedade",
           "Preferência por uma cor",
-          "Discriminação enraizada na sociedade"
+          "Algo que não existe mais"
         ],
-        resposta: 3
+        resposta: 1
       },
       {
         pergunta: "Direitos humanos são:",
         opcoes: [
           "Só para quem se comporta",
-          "Privilégios",
           "Universais, indivisíveis e interdependentes",
+          "Privilégios",
           "Leis opcionais"
         ],
-        resposta: 2
+        resposta: 1
       },
       {
         pergunta: "O que significa defender direitos humanos?",
         opcoes: [
           "Proteger só meus amigos",
-          "Apoiar criminosos",
+          "Garantir dignidade para todos",
           "Ser contra a polícia",
-          "Garantir dignidade para todos"
+          "Apoiar criminosos"
         ],
-        resposta: 3
+        resposta: 1
       },
       {
         pergunta: "O que é justiça social?",
@@ -806,41 +806,41 @@
         pergunta: "Por que a liberdade religiosa é importante?",
         opcoes: [
           "Para converter todo mundo",
-          "Ter uma religião oficial",
           "Respeitar diferentes crenças",
+          "Ter uma religião oficial",
           "Obedecer aos líderes religiosos"
         ],
-        resposta: 2
+        resposta: 1
       },
       {
         pergunta: "O que é um direito fundamental?",
         opcoes: [
-          "Essencial para vida digna",
           "Um direito secundário",
+          "Essencial para vida digna",
           "Um privilégio",
           "Algo que podemos viver sem"
         ],
-        resposta: 0
+        resposta: 1
       },
       {
         pergunta: "Qual o papel do Estado nos direitos humanos?",
         opcoes: [
           "Criar dificuldades",
-          "Controlar tudo",
           "Garantir e proteger direitos",
+          "Controlar tudo",
           "Só cobrar impostos"
         ],
-        resposta: 2
+        resposta: 1
       },
       {
         pergunta: "O que é violação de direitos humanos?",
         opcoes: [
-          "Coisa do passado",
+          "Qualquer desrespeito a direitos básicos",
           "Só crimes muito graves",
           "Algo que só governos fazem",
-          "Qualquer desrespeito a direitos básicos"
+          "Coisa do passado"
         ],
-        resposta: 3
+        resposta: 0
       },
       {
         pergunta: "O que é democracia?",
@@ -856,11 +856,11 @@
         pergunta: "O que é acesso à justiça?",
         opcoes: [
           "Só para quem pode pagar",
-          "Algo desnecessário",
+          "Direito de defender seus direitos",
           "Processos judiciais complicados",
-          "Direito de defender seus direitos"
+          "Algo desnecessário"
         ],
-        resposta: 3
+        resposta: 1
       },
       {
         pergunta: "Por que direitos humanos incluem saúde?",
@@ -1016,11 +1016,6 @@
     const p = perguntasNivelAtual[indicePergunta];
     questionText.textContent = p.pergunta;
     answersContainer.innerHTML = '';
-
-    // Alternar entre Justino e Lia para cada pergunta
-    const personagemAtual = indicePergunta % 2 === 0 ? 'justino.png' : 'lia.png';
-    currentCharacter.src = personagemAtual;
-    currentCharacter.alt = indicePergunta % 2 === 0 ? 'Justino' : 'Lia';
 
     // Mostrar as opções na ORDEM ORIGINAL (sem embaralhar)
     p.opcoes.forEach((opcao, i) => {
