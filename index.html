@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -121,16 +120,6 @@
     width: 100%;
   }
 
-  .character {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 15px;
-    border: 3px solid #6a5acd;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  }
-
   #question-text {
     font-size: 1.9rem;
     font-weight: 700;
@@ -139,7 +128,7 @@
     margin: 0;
     animation: fadeIn 0.5s ease;
     flex: 1;
-    text-align: left;
+    text-align: center;
   }
   
   @keyframes fadeIn {
@@ -345,10 +334,6 @@
       top: 15px;
       right: 15px;
     }
-    .character {
-      width: 60px;
-      height: 60px;
-    }
   }
 </style>
 </head>
@@ -368,10 +353,6 @@
     
     <!-- Tela Inicial -->
     <section id="start-screen" class="active" aria-live="polite">
-      <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 20px;">
-        <img src="justino.png" alt="Justino" class="character">
-        <img src="lia.png" alt="Lia" class="character">
-      </div>
       <h1>Quiz Divertido<br>de Direitos Humanos</h1>
       <p class="description">
         Vamos aprender sobre direitos humanos de forma fácil e divertida!<br>
@@ -396,7 +377,6 @@
       </div>
       
       <div id="question-container">
-        <img id="current-character" src="" alt="Personagem" class="character">
         <div id="question-text" tabindex="0"></div>
       </div>
       
@@ -410,10 +390,6 @@
 
     <!-- Tela Resultado Final -->
     <section id="result-screen" aria-live="polite" style="display:none;">
-      <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 20px;">
-        <img src="justino.png" alt="Justino" class="character">
-        <img src="lia.png" alt="Lia" class="character">
-      </div>
       <h1>Parabéns! 🎉</h1>
       <div id="final-score"></div>
       <div id="high-score"></div>
@@ -915,7 +891,6 @@
   const timerContainer = document.getElementById('timer-container');
   const timeoutMessage = document.getElementById('timeout-message');
   const timeoutOkBtn = document.getElementById('timeout-ok-btn');
-  const currentCharacter = document.getElementById('current-character');
 
   // Sons para feedback
   const somAcerto = new Audio('https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg');
@@ -1017,11 +992,6 @@
     const p = perguntasNivelAtual[indicePergunta];
     questionText.textContent = p.pergunta;
     answersContainer.innerHTML = '';
-
-    // Alternar entre Justino e Lia para cada pergunta
-    const personagemAtual = indicePergunta % 2 === 0 ? 'justino.png' : 'lia.png';
-    currentCharacter.src = personagemAtual;
-    currentCharacter.alt = indicePergunta % 2 === 0 ? 'Justino' : 'Lia';
 
     // Mostrar as opções na ORDEM ORIGINAL (sem embaralhar)
     p.opcoes.forEach((opcao, i) => {
